@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<htm>
 <head>
     <meta charset="utf-8">
 
@@ -9,8 +9,13 @@
 <body>
 
     <div ng-app="app">
-        <div ng-controller="ContactController">
-            Hello, {{ name }}!
+        <div ng-controller="ContactController as contact">
+            Hello, {{ contact.name }}! email: {{contact.email}}, phone: {{contact.phone}}
+            <div ng-controller="StaffController as staff">
+                Hi, {{staff.name}}! email: {{staff.email}}, phone: {{staff.phone}}
+
+                <button ng-click="contact.changeName()">change name</button>
+            </div>
         </div>
     </div>
 
